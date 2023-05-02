@@ -93,4 +93,22 @@ INSERT INTO course_video (course_id, coursevideo_id) VALUES (1,1),(1,2),(2,3),(2
 
 INSERT INTO course_categories (course_id, category_id) VALUES (1,1),(2,2);
 
+SELECT * FROM users;
+
+SELECT * FROM roles;
+
+SELECT * FROM coursevideo;
+
+SELECT * FROM levels;
+
+SELECT * FROM courses;
+
+SELECT * FROM categories;
+
+SELECT * FROM course_video;
+
+SELECT * FROM course_categories;
+
+SELECT * FROM course_students;
+
 SELECT a.name_user, b.name_user, name_lev, name_cat, title_course, description, c.name_user FROM courses INNER JOIN users a ON courses.admin_id=a.id JOIN users b ON courses.teacher_id=b.id JOIN levels ON courses.level_id=levels.id JOIN course_categories ON courses.id=course_categories.course_id JOIN categories ON course_categories.category_id = categories.id JOIN course_students ON courses.id = course_students.course_id JOIN users c ON course_students.student_id=c.id;
